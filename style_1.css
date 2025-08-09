@@ -1,0 +1,411 @@
+body {
+  margin: 0;
+}
+
+.working-arrea {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: url('./images/Background.png') no-repeat center center;
+  background-size: cover;
+  position: relative;
+  /* background-color: red; */
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.pergament-body {
+  position: absolute;
+  /* top: calc(30vh + var(--scroll-offset, 0px)); */
+  top: 50%;
+  width: 50vw;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 0;
+  overflow: hidden;
+  z-index: 0;
+  transition: height 1s ease-in-out, top 1s cubic-bezier(.4, 1, .2, 1);
+  /* transition: all 1s cubic-bezier(.4, 0, .2, 1); */
+}
+
+.pergament-inner {
+  background: url('./images/papyrus-3.png') no-repeat top center;
+  background-size: contain;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1920 / 4776;
+}
+
+.pergament-top {
+  background: url('./images/roll-1.png') no-repeat center center;
+  background-size: contain;
+  width: 80vw;
+  aspect-ratio: 7.4 / 1;
+  height: auto;
+  z-index: 2;
+  transition: margin-top 1s ease-in-out;
+}
+
+.pergament-bottom {
+  background: url('./images/roll-1.png') no-repeat center center;
+  background-size: contain;
+  width: 80vw;
+  aspect-ratio: 7.4 / 1;
+  height: auto;
+  /* margin-top: -3vh; */
+  margin-top: -6vh;
+  z-index: 1;
+  transition: margin-top 1s ease-in-out;
+}
+
+.pergament-top-opened {}
+
+.pergament-bottom-opened {
+  /* margin-top: 50vh; */
+  margin-top: 39vh;
+}
+
+.pergament-body-opened {
+  height: 60vh;
+  /* видима частина */
+  top: 20vh;
+  overflow-y: auto;
+  /* скрол вмісту */
+  scrollbar-width: none;
+  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE, Edge */
+}
+
+.pergament-body-opened::-webkit-scrollbar {
+  display: none;
+}
+
+.seal {
+  width: 20vw;
+  height: 20vw;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  cursor: url("./images/pointer.png") 4 12, pointer;
+  /* transition: box-shadow 0.5s linear, filter 0.5s linear; */
+}
+
+.seal-top {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: url('./images/seal_up.png') no-repeat center center;
+  background-size: contain;
+  border-radius: 10vw 10vw 0 0;
+  opacity: 1;
+}
+
+.seal-bottom {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: url('./images/seal_down.png') no-repeat center center;
+  background-size: contain;
+  border-radius: 0 0 10vw 10vw;
+  opacity: 1;
+}
+
+.seal-open .seal-top {
+  /* top: -10vw; */
+  top: -7vw;
+  opacity: 0;
+  transition: top 0.5s cubic-bezier(.68, -0.55, .27, 1.55), opacity 0.5s ease-in-out;
+}
+
+.seal-open .seal-bottom {
+  /* bottom: -10vw; */
+  bottom: -7vw;
+  opacity: 0;
+  transition: bottom 0.5s cubic-bezier(.68, -0.55, .27, 1.55), opacity 0.5s ease-in-out;
+}
+
+@keyframes seal-vibrate {
+  0% {
+    transform: translateY(0);
+  }
+
+  20% {
+    transform: translateY(-4px);
+  }
+
+  40% {
+    transform: translateY(4px);
+  }
+
+  60% {
+    transform: translateY(-4px);
+  }
+
+  80% {
+    transform: translateY(4px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.seal-vibrate .seal-top,
+.seal-vibrate .seal-bottom {
+  animation: seal-vibrate 0.5s linear;
+}
+
+.tassel {
+  position: absolute;
+  top: 0;
+  width: 5vw;
+  height: auto;
+  transform-origin: top center;
+  transform: rotateX(90deg);
+  opacity: 0;
+  transition: transform 0.8s cubic-bezier(.17, .67, .83, .67), opacity 0.3s ease-in;
+}
+
+.tassel-left {
+  left: 7vw;
+  top: 6vh;
+  z-index: 2;
+}
+
+.tassel-right {
+  right: 6vw;
+  top: 6vh;
+  z-index: 2;
+}
+
+.tassel-visible {
+  transform: rotateX(0deg);
+  opacity: 1;
+}
+
+
+@media (max-width: 1800px) {
+  /* .working-arrea {
+    background-color: black;
+  } */
+
+  .pergament-bottom {
+    margin-top: -5vh;
+  }
+
+  .pergament-bottom-opened {
+    margin-top: 50vh;
+  }
+
+  .tassel-right,
+  .tassel-left {
+    top: 5vh;
+  }
+
+  .seal-open .seal-top {
+    top: -15vw;
+  }
+
+  .seal-open .seal-bottom {
+    bottom: -15vw;
+  }
+
+  .pergament-body-opened {
+    /* height: 60vh; */
+    top: 13vh;
+  }
+}
+
+@media (max-width: 1400px) {
+  /* .working-arrea {
+    background-color: orange;
+  } */
+
+  .pergament-bottom {
+    margin-top: -3vh;
+  }
+
+  .pergament-bottom-opened {
+    margin-top: 50vh;
+  }
+
+  .tassel-right,
+  .tassel-left {
+    top: 5vh;
+  }
+
+  .seal-open .seal-top {
+    top: -15vw;
+  }
+
+  .seal-open .seal-bottom {
+    bottom: -15vw;
+  }
+
+  .pergament-body-opened {
+    /* height: 60vh; */
+    top: 13vh;
+  }
+}
+
+@media (max-width: 1200px) {
+  /* .working-arrea {
+    background-color: green;
+  } */
+
+  /* .pergament-bottom {
+    margin-top: -3vh;
+  }
+
+  .pergament-bottom-opened {
+    margin-top: 50vh;
+  }
+
+    .tassel-right,
+  .tassel-left {
+        top: 5vh;
+  }
+
+  .seal-open .seal-top {
+    top: -15vw;
+  }
+
+  .seal-open .seal-bottom {
+    bottom: -15vw;
+  } */
+
+  .pergament-body-opened {
+    /* height: 60vh; */
+    top: 10vh;
+  }
+}
+
+@media (max-width: 992px) {
+  /* .working-arrea {
+    background-color: purple;
+  } */
+
+
+  /* .pergament-bottom {
+    margin-top: -3vh;
+  }
+
+  .pergament-bottom-opened {
+    margin-top: 50vh;
+  }
+*/
+  .tassel-right,
+  .tassel-left {
+    top: 4vh;
+  }
+
+  .seal-open .seal-top {
+    top: -20vw;
+  }
+
+  .seal-open .seal-bottom {
+    bottom: -20vw;
+  }
+
+  .pergament-body-opened {
+    /* height: 60vh; */
+    top: 8vh;
+  }
+}
+
+@media (max-width: 768px) {
+  /* .working-arrea {
+    background-color: lightblue;
+  } */
+
+
+
+  .pergament-bottom {
+    margin-top: -2vh;
+  }
+
+  .pergament-bottom-opened {
+    margin-top: 70vh;
+  }
+
+
+  .tassel-right,
+  .tassel-left {
+    top: 3vh;
+  }
+
+  .seal-open .seal-top {
+    top: -30vw;
+  }
+
+  .seal-open .seal-bottom {
+    bottom: -30vw;
+  }
+
+  .pergament-body-opened {
+    height: 75vh;
+    /* top: 8vh; */
+  }
+}
+
+@media (max-width: 576px) {
+  /* .working-arrea {
+    background-color: yellow;
+  } */
+
+  .pergament-bottom {
+    margin-top: -2vh;
+  }
+
+  .pergament-bottom-opened {
+    margin-top: 80vh;
+  }
+
+
+  .tassel-right,
+  .tassel-left {
+    top: 2vh;
+  }
+
+  .seal-open .seal-top {
+    top: -35vw;
+  }
+
+  .seal-open .seal-bottom {
+    bottom: -35vw;
+  }
+
+  .pergament-body-opened {
+    height: 83vh;
+    top: 5vh;
+  }
+}
+
+/*
+@media (max-width: 480px) {
+  .working-arrea {
+    background-color: pink;
+  }
+
+}
+
+@media (max-width: 375px) {
+  .working-arrea {
+    background-color: blue;
+  }
+}
+
+ @media (min-width: 1401px) */
