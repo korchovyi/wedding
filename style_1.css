@@ -99,6 +99,10 @@ body {
   z-index: 3;
   cursor: url("./images/pointer.png") 4 12, pointer;
   /* transition: box-shadow 0.5s linear, filter 0.5s linear; */
+  -webkit-tap-highlight-color: transparent;
+  /* прибирає синій ефект */
+  outline: none;
+  /* додатково прибирає outline */
 }
 
 .seal-top {
