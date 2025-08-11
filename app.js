@@ -7,10 +7,18 @@ $('.js-start-trigger').on('click', () => {
     sealOpen();
     setTimeout(() => {
       $('.js-seal').remove();
-      rollPergament();
+      ribbonOpen();
+
+
       setTimeout(() => {
-        $('.tassel').addClass('tassel-visible');
-      }, 1000);
+        rollPergament();
+        setTimeout(() => {
+          $('.tassel').addClass('tassel-visible');
+        }, 1000);
+      }, 500);
+
+
+
     }, 500);
   }, 500);
 
@@ -25,6 +33,10 @@ const sealVibrate = () => {
 
 const sealOpen = () => {
   $('.js-seal').removeClass('seal-vibrate').addClass('seal-open');
+}
+
+const ribbonOpen = () => {
+  $('.js-ribbon').addClass('ribbon-open');
 }
 
 const rollPergament = () => {

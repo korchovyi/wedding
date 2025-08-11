@@ -8,10 +8,10 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  /* background: url('./images/Background.png') no-repeat center center; */
+  background: url('./images/Background.png') no-repeat center center;
   background-size: cover;
   position: relative;
-  background-color: red;
+  /* background-color: red; */
 }
 
 .content {
@@ -36,7 +36,7 @@ body {
 }
 
 .pergament-inner {
-  background: url('./images/papyrus-3.png') no-repeat top center;
+  background: url('./images/papyrus-4.png') no-repeat top center;
   background-size: contain;
   width: 100%;
   height: auto;
@@ -89,14 +89,14 @@ body {
 }
 
 .seal {
-  width: 20vw;
-  height: 20vw;
+  width: 15vw;
+  height: 15vw;
   border-radius: 50%;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 3;
+  z-index: 4;
   cursor: url("./images/pointer.png") 4 12, pointer;
   /* transition: box-shadow 0.5s linear, filter 0.5s linear; */
   -webkit-tap-highlight-color: transparent;
@@ -131,14 +131,14 @@ body {
   /* top: -10vw; */
   top: -7vw;
   opacity: 0;
-  transition: top 0.5s cubic-bezier(.68, -0.55, .27, 1.55), opacity 0.5s ease-in-out;
+  transition: top 0.5s cubic-bezier(.68, 0, .27, 1.55), opacity 0.5s ease-in-out;
 }
 
 .seal-open .seal-bottom {
   /* bottom: -10vw; */
   bottom: -7vw;
   opacity: 0;
-  transition: bottom 0.5s cubic-bezier(.68, -0.55, .27, 1.55), opacity 0.5s ease-in-out;
+  transition: bottom 0.5s cubic-bezier(.68, 0, .27, 1.55), opacity 0.5s ease-in-out;
 }
 
 @keyframes seal-vibrate {
@@ -201,10 +201,33 @@ body {
 }
 
 
+
+.ribbon {
+  margin-top: 50px;
+  width: 40vw;
+  height: 40vw;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  background: url('./images/ribbon.png') no-repeat center center;
+  background-size: contain;
+  opacity: 1;
+}
+
+.ribbon-open {
+  left: 0;
+  opacity: 0;
+  transition: left 0.5s cubic-bezier(.68, 0, .27, 1.55), opacity 0.5s ease-in-out;
+}
+
+
 @media (max-width: 1800px) {
-  .working-arrea {
+  /* .working-arrea {
     background-color: black;
-  }
+  } */
 
   .pergament-bottom {
     margin-top: -5vh;
@@ -234,9 +257,9 @@ body {
 }
 
 @media (max-width: 1400px) {
-  .working-arrea {
+  /* .working-arrea {
     background-color: orange;
-  }
+  } */
 
   .pergament-bottom {
     margin-top: -3vh;
@@ -266,9 +289,9 @@ body {
 }
 
 @media (max-width: 1200px) {
-  .working-arrea {
+  /* .working-arrea {
     background-color: green;
-  }
+  } */
 
   /* .pergament-bottom {
     margin-top: -3vh;
@@ -298,9 +321,9 @@ body {
 }
 
 @media (max-width: 992px) {
-  .working-arrea {
+  /* .working-arrea {
     background-color: purple;
-  }
+  } */
 
 
   /* .pergament-bottom {
@@ -331,9 +354,9 @@ body {
 }
 
 @media (max-width: 768px) {
-  .working-arrea {
+  /* .working-arrea {
     background-color: lightblue;
-  }
+  } */
 
 
 
@@ -366,16 +389,16 @@ body {
 }
 
 @media (max-width: 576px) {
-  .working-arrea {
+  /* .working-arrea {
     background-color: yellow;
-  }
+  } */
 
   .pergament-bottom {
     margin-top: -2vh;
   }
 
   .pergament-bottom-opened {
-    margin-top: 80vh;
+    margin-top: 60vh;
   }
 
 
@@ -393,8 +416,8 @@ body {
   }
 
   .pergament-body-opened {
-    height: 83vh;
-    top: 5vh;
+    height: 66vh;
+    top: 3vh;
   }
 }
 
