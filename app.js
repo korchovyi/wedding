@@ -8,17 +8,12 @@ $('.js-start-trigger').on('click', () => {
     setTimeout(() => {
       $('.js-seal').remove();
       ribbonOpen();
-
-
       setTimeout(() => {
         rollPergament();
         setTimeout(() => {
           $('.tassel').addClass('tassel-visible');
         }, 1000);
       }, 500);
-
-
-
     }, 500);
   }, 500);
 
