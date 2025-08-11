@@ -8,10 +8,10 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background: url('./images/Background.png') no-repeat center center;
+  /* background: url('./images/Background.png') no-repeat center center; */
   background-size: cover;
   position: relative;
-  /* background-color: red; */
+  background-color: red;
 }
 
 .content {
@@ -202,9 +202,9 @@ body {
 
 
 @media (max-width: 1800px) {
-  /* .working-arrea {
+  .working-arrea {
     background-color: black;
-  } */
+  }
 
   .pergament-bottom {
     margin-top: -5vh;
@@ -234,9 +234,9 @@ body {
 }
 
 @media (max-width: 1400px) {
-  /* .working-arrea {
+  .working-arrea {
     background-color: orange;
-  } */
+  }
 
   .pergament-bottom {
     margin-top: -3vh;
@@ -266,9 +266,9 @@ body {
 }
 
 @media (max-width: 1200px) {
-  /* .working-arrea {
+  .working-arrea {
     background-color: green;
-  } */
+  }
 
   /* .pergament-bottom {
     margin-top: -3vh;
@@ -298,9 +298,9 @@ body {
 }
 
 @media (max-width: 992px) {
-  /* .working-arrea {
+  .working-arrea {
     background-color: purple;
-  } */
+  }
 
 
   /* .pergament-bottom {
@@ -331,9 +331,9 @@ body {
 }
 
 @media (max-width: 768px) {
-  /* .working-arrea {
+  .working-arrea {
     background-color: lightblue;
-  } */
+  }
 
 
 
@@ -366,9 +366,9 @@ body {
 }
 
 @media (max-width: 576px) {
-  /* .working-arrea {
+  .working-arrea {
     background-color: yellow;
-  } */
+  }
 
   .pergament-bottom {
     margin-top: -2vh;
