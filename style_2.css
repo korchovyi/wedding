@@ -22,6 +22,9 @@ body {
   position: relative;
 }
 
+
+/* !!!!!!!!!!!! pergament  !!!!!!!!!!!! */
+
 .pergament-top {
   background: url('./images/roll.png') no-repeat center center;
   background-size: contain;
@@ -41,7 +44,53 @@ body {
   margin-top: -50px;
 }
 
+.pergament-bottom-opened {
+  margin-top: 50vh;
+}
 
+/* !!!!!!!!!!!! BODY  !!!!!!!!!!!! */
+
+.pergament-body {
+  position: absolute;
+  /* top: calc(30vh + var(--scroll-offset, 0px)); */
+  top: 50%;
+  width: 500px;
+  /* left: 50%;
+  transform: translateX(-50%); */
+  height: 0;
+  overflow: hidden;
+  z-index: 0;
+  transition: height 1s ease-in-out, top 1s cubic-bezier(.4, 1, .2, 1);
+  /* transition: all 1s cubic-bezier(.4, 0, .2, 1); */
+}
+
+.pergament-body-opened {
+  height: calc(50vh + 100px);
+  /* видима частина */
+  top: calc(25vh - 80px);
+  overflow-y: auto;
+  /* скрол вмісту */
+  scrollbar-width: none;
+  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE, Edge */
+}
+
+.pergament-inner {
+  background: url('./images/papyrus-4.png') no-repeat top center;
+  background-size: contain;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1920 / 4776;
+}
+
+
+
+
+
+
+
+/* !!!!!!!!!!!! ribbon  !!!!!!!!!!!! */
 .ribbon {
   width: 500px;
   height: 500px;
@@ -61,10 +110,10 @@ body {
   transition: left 0.5s cubic-bezier(.68, 0, .27, 1.55), opacity 0.5s ease-in-out;
 }
 
-
+/* !!!!!!!!!!!! seal  !!!!!!!!!!!! */
 .seal {
-  width: 15vw;
-  height: 15vw;
+  width: 140px;
+  height: 140px;
   border-radius: 50%;
   position: absolute;
   top: 50%;
@@ -84,7 +133,7 @@ body {
   height: 100%;
   background: url('./images/seal_up.png') no-repeat center center;
   background-size: contain;
-  border-radius: 10vw 10vw 0 0;
+  border-radius: 70px 70px 0 0;
   opacity: 1;
 }
 
@@ -95,6 +144,83 @@ body {
   height: 100%;
   background: url('./images/seal_down.png') no-repeat center center;
   background-size: contain;
-  border-radius: 0 0 10vw 10vw;
+  border-radius: 0 0 70px 70px;
+  opacity: 1;
+}
+
+@keyframes seal-vibrate {
+  0% {
+    transform: translateY(0);
+  }
+
+  20% {
+    transform: translateY(-4px);
+  }
+
+  40% {
+    transform: translateY(4px);
+  }
+
+  60% {
+    transform: translateY(-4px);
+  }
+
+  80% {
+    transform: translateY(4px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.seal-vibrate .seal-top,
+.seal-vibrate .seal-bottom {
+  animation: seal-vibrate 0.5s linear;
+}
+
+.seal-open .seal-top {
+  top: -200px;
+  opacity: 0;
+  transition: top 0.5s cubic-bezier(.68, 0, .27, 1.55), opacity 0.5s ease-in-out;
+}
+
+.seal-open .seal-bottom {
+  bottom: -200px;
+  opacity: 0;
+  transition: bottom 0.5s cubic-bezier(.68, 0, .27, 1.55), opacity 0.5s ease-in-out;
+}
+
+
+
+
+/* !!!!!!!!!!!! tassel  !!!!!!!!!!!! */
+
+
+.tassel {
+  position: absolute;
+  top: 0;
+  width: 50px;
+  height: auto;
+  transform-origin: top center;
+  transform: rotateX(90deg);
+  opacity: 0;
+  transition: transform 0.8s cubic-bezier(.17, .67, .83, .67), opacity 0.3s ease-in;
+}
+
+.tassel-left {
+  left: 70px;
+  top: calc(var(--center-top) - 25vh - 115px);
+  z-index: 2;
+}
+
+.tassel-right {
+  right: 60px;
+  top: calc(var(--center-top) - 25vh - 115px);
+  z-index: 2;
+}
+
+.tassel-visible {
+  transform: rotateX(0deg);
   opacity: 1;
 }

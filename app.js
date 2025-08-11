@@ -1,3 +1,5 @@
+document.documentElement.style.setProperty('--center-top', `${window.innerHeight / 2}px`);
+
 $('.js-start-trigger').on('click', () => {
   console.log('Start button clicked!');
 
@@ -9,6 +11,7 @@ $('.js-start-trigger').on('click', () => {
       $('.js-seal').remove();
       ribbonOpen();
       setTimeout(() => {
+        $('.js-ribbon').remove();
         rollPergament();
         setTimeout(() => {
           $('.tassel').addClass('tassel-visible');
