@@ -224,3 +224,56 @@ body {
   transform: rotateX(0deg);
   opacity: 1;
 }
+
+@media (max-width: 576px) {
+  .content {
+    width: 350px;
+  }
+
+  .pergament-top,
+  .pergament-bottom {
+    height: 62px;
+  }
+
+  .pergament-bottom {
+    margin-top: -20px;
+  }
+
+  .pergament-bottom-opened {
+    margin-top: 460px;
+  }
+
+  .pergament-body {
+    width: 200px;
+  }
+
+  .pergament-body-opened {
+    height: 497px;
+    top: 42px;
+  }
+
+  .ribbon {
+    width: 200px;
+    height: 200px;
+    top: calc(50% + 35px);
+  }
+
+  .seal {
+    width: 70px;
+    height: 70px;
+  }
+
+  .tassel {
+    width: 30px;
+  }
+
+  .tassel-left {
+    left: 26px;
+    top: 20px;
+  }
+
+  .tassel-right {
+    right: 26px;
+    top: 20px;
+  }
+}
