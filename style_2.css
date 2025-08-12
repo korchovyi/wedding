@@ -9,7 +9,7 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background: url('./images/Background.png') no-repeat center center;
+  background: url('./images/Background-web.jpg') no-repeat center center;
   background-size: cover;
   position: relative;
 }
@@ -32,8 +32,11 @@ body {
   height: 140px;
   z-index: 2;
   transition: margin-top 1s ease-in-out;
+  position: relative;
 }
 
+/*
+*/
 .pergament-bottom {
   background: url('./images/roll.png') no-repeat center center;
   background-size: contain;
@@ -46,34 +49,51 @@ body {
 
 .pergament-bottom-opened {
   margin-top: 50vh;
+
 }
 
-/* !!!!!!!!!!!! BODY  !!!!!!!!!!!! */
 
+/* !!!!!!!!!!!! BODY  !!!!!!!!!!!! */
+/*
 .pergament-body {
   position: absolute;
-  /* top: calc(30vh + var(--scroll-offset, 0px)); */
   top: 50%;
   width: 500px;
-  /* left: 50%;
-  transform: translateX(-50%); */
   height: 0;
   overflow: hidden;
   z-index: 0;
   transition: height 1s ease-in-out, top 1s cubic-bezier(.4, 1, .2, 1);
-  /* transition: all 1s cubic-bezier(.4, 0, .2, 1); */
 }
 
 .pergament-body-opened {
   height: calc(50vh + 100px);
-  /* видима частина */
   top: calc(25vh - 80px);
   overflow-y: auto;
-  /* скрол вмісту */
   scrollbar-width: none;
-  /* Firefox */
   -ms-overflow-style: none;
-  /* IE, Edge */
+}
+  */
+
+
+.pergament-body {
+  width: 500px;
+  height: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: 0;
+  transition: height 1s ease-in-out;
+  z-index: 0;
+  left: 150px;
+  top: 90px;
+}
+
+.pergament-body-opened {
+  height: calc(50vh + 100px);
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  /* або інше значення для видимої частини */
 }
 
 .pergament-inner {
@@ -83,9 +103,6 @@ body {
   height: auto;
   aspect-ratio: 1920 / 4776;
 }
-
-
-
 
 
 
@@ -210,13 +227,13 @@ body {
 
 .tassel-left {
   left: 70px;
-  top: calc(var(--center-top) - 25vh - 115px);
+  top: 45px;
   z-index: 2;
 }
 
 .tassel-right {
   right: 60px;
-  top: calc(var(--center-top) - 25vh - 115px);
+  top: 45px;
   z-index: 2;
 }
 
@@ -226,6 +243,11 @@ body {
 }
 
 @media (max-width: 576px) {
+  .working-arrea {
+    background: url('./images/Background-mobile.jpg') no-repeat center center;
+  }
+
+
   .content {
     width: 350px;
   }
@@ -245,6 +267,7 @@ body {
 
   .pergament-body {
     width: 200px;
+    left: 75px;
   }
 
   .pergament-body-opened {
